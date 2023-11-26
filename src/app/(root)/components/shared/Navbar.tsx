@@ -1,5 +1,5 @@
 'use client'
-import { UserButton } from '@clerk/nextjs'
+import { SignedIn, UserButton } from '@clerk/nextjs'
 import React from 'react'
 import Theme from './Theme'
 type Props = {}
@@ -12,7 +12,9 @@ const Navbar = (props: Props) => {
       
      
       
-   
+   <SignedIn>
+    <UserButton afterSignOutUrl='/'/>
+   </SignedIn>
     <Theme/>
     </nav>
   )

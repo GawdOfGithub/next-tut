@@ -19,13 +19,14 @@ const Theme = ()=>
     <MenubarTrigger>File</MenubarTrigger>
     <MenubarContent>
       <MenubarItem>
-        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+        Light Mode 
       </MenubarItem>
-      <MenubarItem>New Window</MenubarItem>
+      <MenubarSeparator/>
+      <MenubarItem>Dark Mode</MenubarItem>
       <MenubarSeparator />
-      <MenubarItem>Share</MenubarItem>
-      <MenubarSeparator />
-      <MenubarItem>Print</MenubarItem>
+      <MenubarItem>Default Mode</MenubarItem>
+      
+      
     </MenubarContent>
   </MenubarMenu>
 </Menubar>
