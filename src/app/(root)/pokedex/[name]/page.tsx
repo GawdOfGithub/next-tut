@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-type Props = {}
+// Define the type for the props
+type Props = {
+  params: {
+    name: string; 
+  };
+};
 
-function page({params}:any) {
-  return (
-    <div>{params.name}</div>
-  )
+function Page({ params }: Props) {
+  return <div>{params.name}</div>;
 }
 
-export default page
+export default Page;
