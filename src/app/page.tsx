@@ -1,9 +1,15 @@
-import Image from 'next/image'
+import React from 'react'
+import { UserButton } from '@clerk/nextjs'
+import Navbar from '@/app/(root)/components/shared/Navbar'
+type Props = {}
 
-export default function Home() {
+const page = (props: Props) => {
   return (
-   <>
-   <div>Hello world</div>
-   </>
+    <div>
+        <Navbar/>
+        
+    </div>
   )
 }
+
+export default page
