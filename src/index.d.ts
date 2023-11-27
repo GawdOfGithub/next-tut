@@ -5,3 +5,10 @@ export type themeType =
     value:string
    
 }
+export type SideBarType =
+{
+   
+    name:string,
+    link:string
+   
+}

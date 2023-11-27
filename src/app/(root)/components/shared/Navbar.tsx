@@ -3,15 +3,18 @@ import { SignedIn, UserButton } from '@clerk/nextjs'
 import React from 'react'
 import Theme from './Theme'
 import { Button } from '@/components/ui/button'
+import Hamburger from './Hamburger'
+import useWindow from '@/hooks/useWindow'
 type Props = {}
 
 const Navbar = (props: Props) => {
+  const {height,width} = useWindow()
   console.log(localStorage.theme);
     
   return (
     <nav className='dark:bg-black bg-gray-200 p-4 flex items-center justify-between min-w-full '>
       
-     
+     {height>=1000 &&<Hamburger/>}
     <span className ="font-bold">  OverFlow</span>
     <input
         type="search"
