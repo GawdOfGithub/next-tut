@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { theme } from "@/constants";
 import {
     Menubar,
     MenubarContent,
@@ -13,19 +14,33 @@ import {
 const Theme = ()=>
 {
     const {mode,setMode} = useTheme()
+    let name = ""
+    if(mode==="light")
+    {
+      name="☀️"
+    }
+    if(mode==="dark")
+    {
+     name ="🌙"
+    }
+    if(mode==="system")
+    {
+    name ="🌓"
+    }
     return(
         <Menubar>
   <MenubarMenu>
-    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarTrigger>{name}</MenubarTrigger>
+   
     <MenubarContent>
-      <MenubarItem>
-        Light Mode 
-      </MenubarItem>
-      <MenubarSeparator/>
-      <MenubarItem>Dark Mode</MenubarItem>
-      <MenubarSeparator />
-      <MenubarItem>Default Mode</MenubarItem>
-      
+    {
+      theme.map((item)=>
+      (
+       <MenubarItem key={item.name} >
+        {item.name}
+       </MenubarItem>
+      )
+    )}
       
     </MenubarContent>
   </MenubarMenu>
