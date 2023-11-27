@@ -13,6 +13,10 @@ import {
   } from "@/components/ui/menubar"
 const Theme = ()=>
 {
+  // Check if the system prefers dark mode
+
+
+
     const {mode,setMode} = useTheme()
     let name = ""
     if(mode==="light")
@@ -36,7 +40,7 @@ const Theme = ()=>
     {
       theme.map((item)=>
       (
-       <MenubarItem key={item.name} >
+       <MenubarItem key={item.name} onClick={()=>setMode(item.value) } >
         {item.name}
        </MenubarItem>
       )

@@ -11,7 +11,9 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState('dark');
   useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (mode === 'dark' || mode === 'light') {
+      
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(mode);
     }
