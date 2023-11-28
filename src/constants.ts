@@ -15,7 +15,7 @@ export const Sidebar:SideBarType[] =
   { name: "👥 Community", link: "/Community" },
   { name: "🔍 Find Jobs", link: "/Find Jobs" },
   { name: "🏷️ Tags", link: "/Tags" },
-  { name: "➕ Add a question", link: "/" },
+  { name: "❓ Ask a question", link: "/" },
   { name: "Login", link: "/" },
   { name: "SignUp", link: "/" },
 ]
