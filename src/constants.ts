@@ -10,12 +10,12 @@ export const  theme:themeType[] =
 export const Sidebar:SideBarType[] =
 [
 
-    { name: "🏠 Home", link: "/Home" },
+    { name: "🏠 Home", link: "/" },
   { name: "📚 Collections", link: "/Collections" },
   { name: "👥 Community", link: "/Community" },
   { name: "🔍 Find Jobs", link: "/Find Jobs" },
   { name: "🏷️ Tags", link: "/Tags" },
-  { name: "❓ Ask a question", link: "/" },
-  { name: "Login", link: "/" },
-  { name: "SignUp", link: "/" },
+  { name: "❓ Ask a question", link: "/ask" },
+  // { name: "Login", link: "/" },
+  // { name: "SignUp", link: "/" },
 ]

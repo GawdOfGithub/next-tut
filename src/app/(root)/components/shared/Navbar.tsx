@@ -15,8 +15,8 @@ const Navbar = (props: Props) => {
   return (
     <>
      
-      <nav className='dark:bg-black bg-gray-200 p-4 flex items-center justify-between '>
-        {width <= 800 && <Hamburger />}
+      <nav className='dark:bg-black dark:text-white bg-gray-200 p-4 flex items-center justify-between font-bold '>
+        {width <= 900 && <Hamburger />}
         <span className="font-bold">OverFlow</span>
         <input
           type="search"

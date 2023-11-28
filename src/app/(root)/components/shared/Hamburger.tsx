@@ -1,5 +1,6 @@
 import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetDescription,
     SheetHeader,
@@ -10,6 +11,8 @@ import {
   import Link from "next/link"
   import { Sidebar } from "@/constants"
   import { usePathname } from "next/navigation"
+  import { SignedOut } from "@clerk/nextjs"
+import { Button } from "@/components/ui/button"
   type Props = {}
   
   const Hamburger = (props: Props) => {
@@ -23,6 +26,7 @@ import {
             <SheetTitle>Overflow</SheetTitle>
             
           </SheetHeader>
+          <SheetClose >
            {
             Sidebar.map((item,index)=>
             (
@@ -35,6 +39,23 @@ import {
               </>
             ))
            }
+           </SheetClose>
+           <SignedOut>
+           <SheetClose>
+            <div className="flex flex-col justify-center items-center ml-10 ">
+              <Link href="/sign-in">
+          <Button className="w-full px-10 py-5 mt-52 mb-5 rounded-lg hover:bg-green-300" >
+           LogIn
+          </Button>
+          </Link>
+          <Link href="/sign-up">
+          <Button className="w-full px-10 py-5  mb-5 rounded-lg hover:bg-green-300" >
+           Sign Up
+          </Button>
+          </Link>
+          </div>
+           </SheetClose>
+           </SignedOut>
         </SheetContent>
       </Sheet>
       
