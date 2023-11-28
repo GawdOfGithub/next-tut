@@ -12,3 +12,13 @@ export type SideBarType =
     link:string
    
 }
+export type QuestionDataType = {
+    _id:number,
+    question:string
+   
+}
+export type TagDataType = {
+    _id:number,
+    name:string,
+    totalQuestions:number
+}

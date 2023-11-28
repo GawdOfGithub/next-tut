@@ -1,4 +1,4 @@
-
+'use client'
 import React from 'react'
 import { useAuth } from '@clerk/nextjs'
 import { Sidebar} from '@/constants'
@@ -7,14 +7,14 @@ import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { SignedOut } from '@clerk/nextjs'
 type Props = {}
-const SidebarForBigDevices = (props: Props) => {
+const LeftSideBar = (props: Props) => {
   const pathname = usePathname();
 
  const {isSignedIn} = useAuth()
  console.log(pathname);
   return (
     <>
-    <div className="font-extrabold min-h-screen max-w-[300px] flex flex-col gap-5 sticky left-0 top-0 bg-black text-white shadow-light-300 dark:shadow-none">
+    <div className="font-extrabold min-h-screen max-w-[300px] flex flex-col gap-5 sticky left-0 top-0 dark:bg-black dark:text-white bg-white text-black shadow-light-300 dark:shadow-none max-sm:hidden">
       {Sidebar.map((item, index) => (
        
         <div key={index}>
@@ -50,4 +50,4 @@ const SidebarForBigDevices = (props: Props) => {
     </>
   );
 };
-export default SidebarForBigDevices
+export default LeftSideBar

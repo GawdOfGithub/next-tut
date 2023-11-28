@@ -5,9 +5,9 @@ type Props = {}
 
 const page = (props: Props) => {
   return (
-    <div className=''>
+    <div className='z-50 text-white'>
      
-        
+        This is the homepage
     </div>
   )
 }

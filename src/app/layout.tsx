@@ -4,6 +4,8 @@ import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import ThemeContextProvider from '@/contexts/ThemeContext'
 import Navbar from '@/app/(root)/components/shared/Navbar'
+import RightSideBar from './(root)/components/shared/RightSideBar'
+import LeftSideBar from './(root)/components/shared/LeftSideBar'
 const inter = Inter({ subsets: ['latin'] ,
 weight: [ '100', '200', '300', '400', '500', '600', '700', '800', '900' ],
 variable:'--font-inter'
@@ -28,8 +30,21 @@ export default function RootLayout({
     <ClerkProvider>
       <ThemeContextProvider>
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable}`}>{children}</body>
-      <Navbar/>
+      <body className={`${inter.variable} ${spaceGrotesk.variable}`}></body>
+      <div>
+        <Navbar/>
+      </div>
+      <div className='flex justify-between'>
+      <div>
+        <LeftSideBar/>
+      </div>
+      <div>
+      {children}
+      </div>
+      <div>
+        <RightSideBar/>
+      </div>
+      </div>
     </html>
     </ThemeContextProvider>
     </ClerkProvider>

@@ -5,7 +5,8 @@ import Theme from './Theme'
 import { Button } from '@/components/ui/button'
 import Hamburger from './Hamburger'
 import useWindow from '@/hooks/useWindow'
-import SidebarForBigDevices from './SidebarForBigDevices'
+
+import RightSideBar from './RightSideBar'
 type Props = {}
 
 const Navbar = (props: Props) => {
@@ -20,16 +21,21 @@ const Navbar = (props: Props) => {
         <span className="font-bold">OverFlow</span>
         <input
           type="search"
-          className="w-12 px-1 py-2 rounded-md border focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-800"
+          className="w-12 px-5 py-5 rounded-md border focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-800"
           placeholder="Search globally"
         />
         <Theme />
         <SignedIn>
           <UserButton afterSignOutUrl='/' />
         </SignedIn>
+       
+        
       </nav>
+      
       <div className=''>
-      {width >= 800 && <SidebarForBigDevices />}
+   
+      
+   
       </div>
     </>
   );
