@@ -8,7 +8,7 @@ type Props = {}
 const RightSideBar = (props: Props) => {
   return (
     <>
-     <div className="font-extrabold min-h-screen max-w-[300px] flex flex-col gap-5 sticky left-0 top-0 bg-white text-black dark:bg-black dark:text-white shadow-light-300 light:text-black dark:shadow-none max-sm:hidden  ">
+     <div className="font-extrabold min-h-screen max-w-[300px] flex flex-col gap-5 sticky left-0 top-0 bg-white text-black dark:bg-black dark:text-white shadow-light-300 light:text-black dark:shadow-none max-sm:hidden   ">
         <h2 className='font-extrabold'>Top questions</h2>
       { QuestionData.map((item,index)=>
        (
