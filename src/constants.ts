@@ -2,11 +2,12 @@ import { themeType } from "."
 import { SideBarType } from "."
 import { QuestionDataType } from "."
 import {TagDataType} from "."
+import {FilerDataType} from "."
 export const  theme:themeType[] =
 [
     {name:"☀️Light Mode ",value:"light"},
     {name:"🌙Dark Mode",value:"dark"},
-    {name:"🌓System Mode",value:"dark"},
+    {name:"🌓System Mode",value:"system"},
 ]
 
 export const Sidebar:SideBarType[] =
@@ -41,4 +42,13 @@ export const TagData:TagDataType[] =
     {_id:4,totalQuestions:5,name:"angular"},
     {_id:5,totalQuestions:5,name:"svetle"},
   
+]
+export const FilterData:FilerDataType[] =  
+[
+  
+    {name:"Newest"},
+    {name:"Recommended"},
+    {name:"Frequent"},
+    {name:"Unanswered"},
+   
 ]

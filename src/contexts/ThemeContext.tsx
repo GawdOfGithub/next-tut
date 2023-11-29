@@ -12,10 +12,23 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState('dark');
   useEffect(() => {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    console.log(prefersDarkMode);
     if (mode === 'dark' || mode === 'light') {
       
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(mode);
+    }
+    if(mode==='system')
+    {
+      if(prefersDarkMode)
+      {
+        document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add('dark');
+      }
+      else{
+        document.documentElement.classList.remove('light', 'dark');
+        document.documentElement.classList.add('light');
+      }
     }
   }, [mode]);
   

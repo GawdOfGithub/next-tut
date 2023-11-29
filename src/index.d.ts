@@ -22,3 +22,6 @@ export type TagDataType = {
     name:string,
     totalQuestions:number
 }
+export type FilerDataType = {
+   name:string
+}

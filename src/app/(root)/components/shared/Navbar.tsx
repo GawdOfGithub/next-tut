@@ -29,7 +29,7 @@ const Navbar = (props: Props) => {
           />
         <input
           type="search"
-          className=" rounded-md border focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-800"
+          className=" rounded-md border focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-800 max-sm:hidden"
           placeholder="Search globally"
         />
         </div>

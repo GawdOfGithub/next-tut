@@ -38,7 +38,7 @@ export default function RootLayout({
       <div>
         <LeftSideBar/>
       </div>
-      <div>
+      <div className='max-sm:w-screen'>
       {children}
       </div>
       <div>
