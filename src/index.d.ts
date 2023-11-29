@@ -31,10 +31,28 @@ export type FilerDataType = {
    name:string
 }
 export type tempQuestionDataType = {
-    question:string,
-    author:string,
+    _id:number,
+    title:string,
+  
+   
     upvotes:number,
     downvotes:number,
-    tags:tag[]
-    
+    views:number
+    tags:
+    {
+        _id:number,
+        name:string
+      
+     
+    }[],
+    author:
+    {
+        _id:number,
+        name:string,
+        picture:string
+
+    }[],
+
 }
+
+

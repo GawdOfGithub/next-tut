@@ -56,12 +56,28 @@ export const FilterData:FilerDataType[] =
 export const tempQuestionData:tempQuestionDataType[] =  
 [
   
-   {question:"how do I use server actions in next 13",author:"Anurag_Bhandari",downvotes:2,upvotes:2,
-  tags:[
-  {_id:1,name:"typescript"},
-  {_id:2,name:"javascript"},
-  {_id:1,name:"python"},
-  ]
+   {
+  _id:1,
+    title:'Cascading in SQLAlchemy?',
+    downvotes:100,
+    tags:[
+      {_id:1,name:"python"},
+      {_id:2,name:"javascript"},
+      {_id:3,name:"typescript"},
+     
+      
+    ],
+    author:[
+      {
+      _id:1,
+      name:"John Doe",
+      picture:"/"
+      }
+    ],
+   upvotes:10,
+   views:100,
+  
+  //  createdAt: newDate('2021-09-01T12:00:00.000Z')
+  
   }
-   
 ]

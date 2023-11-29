@@ -34,11 +34,11 @@ export default function RootLayout({
       <div>
         <Navbar/>
       </div>
-      <div className='flex justify-between'>
+      <div className='flex justify-between '>
       <div>
         <LeftSideBar/>
       </div>
-      <div className='max-sm:w-screen'>
+      <div className=''>
       {children}
       </div>
       <div>
