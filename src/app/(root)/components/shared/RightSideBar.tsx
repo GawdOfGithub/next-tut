@@ -20,6 +20,7 @@ const RightSideBar = (props: Props) => {
       src="right-thin-chevron-svgrepo-com.svg"
       width={10}
       height={10}
+     
       alt="Picture of the author"
     />
     </Link>

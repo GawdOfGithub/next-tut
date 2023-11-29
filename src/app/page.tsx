@@ -12,7 +12,7 @@ const page = (props: Props) => {
      <h1 className='font-extrabold text-4xl text-black dark:text-white'>All Questions</h1>
      <Button className='primary gradient bg-yellow-600 dark:text-white'>Ask A Question</Button>
       </div>
-     <LocalSearchBar/>
+     <LocalSearchBar route ="/"imgSrc="/icons8-search.svg"iconPosition="left" otherClasses='none' placeholder='Search....'/>
         This is the homepage
     </div>
   )
