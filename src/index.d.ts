@@ -22,6 +22,19 @@ export type TagDataType = {
     name:string,
     totalQuestions:number
 }
+type tag = 
+{
+    _id:number,
+    name:string
+}
 export type FilerDataType = {
    name:string
+}
+export type tempQuestionDataType = {
+    question:string,
+    author:string,
+    upvotes:number,
+    downvotes:number,
+    tags:tag[]
+    
 }

@@ -4,6 +4,7 @@ import LocalSearchBar from './(root)/components/shared/search/LocalSearchBar'
 import { Button } from '@/components/ui/button'
 import Filter from './(root)/components/shared/FIlter/filter'
 import FilterSmallScreen from './(root)/components/shared/FIlter/filterSmallScreen'
+import Questions from './(root)/components/shared/Questions'
 type Props = {}
 
 const page = (props: Props) => {
@@ -18,6 +19,7 @@ const page = (props: Props) => {
        <Filter/>
        <div className='mt-3 w-screen'>
        <FilterSmallScreen/>
+       <Questions/>
        </div>
     </div>
   )

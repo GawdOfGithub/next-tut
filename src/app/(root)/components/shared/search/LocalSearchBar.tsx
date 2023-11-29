@@ -21,7 +21,7 @@ const LocalSearchBar = ({
 }: Props) => {
   return (
     <>
- <div className="flex flex-grow  items-center shadow-none text-black dark:text-white bg-cyan-200 dark:bg-cyan-500 min-h-[56px] rounded-[10px] px-4 gap-4 ">
+ <div className="flex flex-grow  items-center shadow-none text-black dark:text-white bg-gray-100 dark:bg-cyan-500 min-h-[56px] rounded-[10px] px-4 gap-4 ">
   
 {iconPosition ==='left' &&
   

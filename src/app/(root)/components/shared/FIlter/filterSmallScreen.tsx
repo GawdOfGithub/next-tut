@@ -12,7 +12,7 @@ import {
     return (
         <div className="sm:hidden w-screen">
         <Select>
-        <SelectTrigger className="w-screen bg-cyan-200 text-black">
+        <SelectTrigger className="w-screen bg-gray-100 text-black">
           <SelectValue placeholder="Select a filter" />
         </SelectTrigger>
         <SelectContent>

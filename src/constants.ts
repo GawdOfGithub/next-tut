@@ -3,6 +3,7 @@ import { SideBarType } from "."
 import { QuestionDataType } from "."
 import {TagDataType} from "."
 import {FilerDataType} from "."
+import { tempQuestionDataType } from "."
 export const  theme:themeType[] =
 [
     {name:"☀️Light Mode ",value:"light"},
@@ -50,5 +51,17 @@ export const FilterData:FilerDataType[] =
     {name:"Recommended"},
     {name:"Frequent"},
     {name:"Unanswered"},
+   
+]
+export const tempQuestionData:tempQuestionDataType[] =  
+[
+  
+   {question:"how do I use server actions in next 13",author:"Anurag_Bhandari",downvotes:2,upvotes:2,
+  tags:[
+  {_id:1,name:"typescript"},
+  {_id:2,name:"javascript"},
+  {_id:1,name:"python"},
+  ]
+  }
    
 ]
