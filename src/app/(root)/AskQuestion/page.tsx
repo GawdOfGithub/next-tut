@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-async-client-component */
 "use client"
 import React,{useRef} from 'react'
 import formSchema from '@/schema/schema'
@@ -7,6 +8,7 @@ import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
 import { Editor } from '@tinymce/tinymce-react';
 import { Badge } from '@/components/ui/badge'
+import { auth } from '@clerk/nextjs'
 import { useState } from 'react'
 import {
   Form,
@@ -18,8 +20,15 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { createQuestion } from '@/lib/actions/question.action'
+import { redirect } from 'next/navigation'
+import { getUserById } from '@/lib/actions/user.action'
 type Props = {}
 const Page = (props: Props) => {
+  const {userId} = auth()
+  if(!userId) redirect('/sign-in')
+  const mongoUser =  getUserById({userId})
+console.log(mongoUser);
  const [isSubmitting, setIsSubmitting] = useState(false);
  
   const editorRef = useRef(null);
@@ -31,8 +40,20 @@ const Page = (props: Props) => {
       tags:[],
     },
   })
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
+    try{
+      await createQuestion({
+        title:values.questionTitle,
+        content:values.explanation,
+        tags:values.tags,
+        // author
+      })
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
   
   }
    const handleKeyPress = (e:React.KeyboardEvent<HTMLInputElement> ,field:any)=>
@@ -97,7 +118,8 @@ if(tagValue!=='')
             apiKey={process.env.NEXT_PUBLIC_TINY_EDITOR_API_KEY}
             //@ts-ignore
       onInit={(evt, editor) => editorRef.current = editor}
-      initialValue="<p>This is the initial content of the editor.</p>"
+      onBlur={field.onBlur}
+      onEditorChange={(content)=>field.onChange(content)}
       init={{
         height: 500,
         width:500,
