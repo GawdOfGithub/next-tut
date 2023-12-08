@@ -35,7 +35,12 @@ export interface DeleteUserParams{
 }
 export interface UpdateUserParams{
     clerkId:string,
-    updateData:string,
+    updateData:{
+        email:string,
+        picture:string,
+        username:string,
+        name:string
+    },
     path:string
 }
 export interface ToggleSavedQuestionParams{
@@ -43,4 +48,14 @@ export interface ToggleSavedQuestionParams{
     QuestionId:string,
     path:string
 }
+
+export interface CreateUserParams
+{
+    clerkId:string,
+    email:string,
+    picture:string,
+    username:string,
+    name:string
+}
+
 //timestamp -4 min 39 sec  title - display question at homepage
