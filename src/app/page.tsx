@@ -1,13 +1,21 @@
+
 import React from 'react'
 import { UserButton } from '@clerk/nextjs'
 import LocalSearchBar from './(root)/components/shared/search/LocalSearchBar'
 import { Button } from '@/components/ui/button'
 import Filter from './(root)/components/shared/FIlter/filter'
 import FilterSmallScreen from './(root)/components/shared/FIlter/filterSmallScreen'
-import Questions from './(root)/components/shared/Questions'
+import QuestionCard from '@/components/ui/QuestionCard'
+import { getQuestions } from '@/lib/actions/question.action'
+
 type Props = {}
 
-const page = (props: Props) => {
+const page = async(props: Props) => {
+  const result = await getQuestions({})
+  console.log(result?.questions);
+  console.log(result?.questions[0]?.author);
+  console.log(result?.questions[1]?.author);
+
   return (
     <div className='z-50 text-white mt-12  '>
       <div className='flex flex-row justify-between gap-20  max-sm:flex-col max-sm:gap-[3rem]'>
@@ -19,7 +27,31 @@ const page = (props: Props) => {
        <Filter/>
        <div className='mt-3'>
        <FilterSmallScreen/>
-       <Questions/>
+       {result?.questions.length>0 ? 
+      result?.questions.map((question)=>
+      (
+        <QuestionCard
+        key={question._id}
+        _id={question.id}
+        title={question.title}
+        tags={question.tags}
+        author={question.author}
+        upvotes={question.upvotes}
+        downvotes={question.downvotes}
+        views={question.views}
+        
+        //createdAt={question.createdAt}
+
+        
+        />
+
+      )) :<>
+      <div>
+        NOthing to show
+      </div>
+      </>
+      }
+      
        </div>
     </div>
   )
