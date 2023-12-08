@@ -45,23 +45,23 @@ export async function createUser(userData:CreateUserParams)
             console.log(error);
         }
     }
-    export async function deleteUser(params:DeleteUserParams)
-    {
-        try{
-            connectToDatabase()
-            const{clerkId} = params
-            const user = await User.findOneAndDelete({clerkId})
-            if(!user)
-            {
-                throw new Error('User not found')
-            }
-            const userQuestionsIds = await Question.find({
-                author:user._id
-            }).distinct('id')
+    // export async function deleteUser(params:DeleteUserParams)
+    // {
+    //     try{
+    //         connectToDatabase()
+    //         const{clerkId} = params
+    //         const user = await User.findOneAndDelete({clerkId})
+    //         if(!user)
+    //         {
+    //             throw new Error('User not found')
+    //         }
+    //         const userQuestionsIds = await Question.find({
+    //             author:user._id
+    //         }).distinct('id')
 
-        }
-        catch(error)
-        {
-            console.log(error);
-        }
-    }
+    //     }
+    //     catch(error)
+    //     {
+    //         console.log(error);
+    //     }
+    // }
