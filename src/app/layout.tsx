@@ -30,7 +30,7 @@ export default function RootLayout({
     <ClerkProvider>
       <ThemeContextProvider>
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable}`}></body>
+      <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <div>
         <Navbar/>
       </div>
@@ -45,6 +45,7 @@ export default function RootLayout({
         <RightSideBar/>
       </div>
       </div>
+      </body>
     </html>
     </ThemeContextProvider>
     </ClerkProvider>

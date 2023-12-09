@@ -9,7 +9,6 @@ import QuestionCard from '@/components/ui/QuestionCard'
 import { getQuestions } from '@/lib/actions/question.action'
 
 type Props = {}
-
 const page = async(props: Props) => {
   const result = await getQuestions({})
   console.log(result?.questions);

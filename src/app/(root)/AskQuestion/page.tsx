@@ -3,7 +3,7 @@ import Question from './Question'
 import { auth } from '@clerk/nextjs';
 import {redirect} from 'next/navigation'
 import  getUserById  from '@/lib/actions/user.action';
-const  page =async() => {
+const  Page =async() => {
   
   
   
@@ -22,4 +22,4 @@ const {userId} = auth()
   )
 }
 []
-export default page
+export default Page
