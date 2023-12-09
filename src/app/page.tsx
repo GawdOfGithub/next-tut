@@ -1,4 +1,5 @@
 
+
 import React from 'react'
 import { UserButton } from '@clerk/nextjs'
 import LocalSearchBar from './(root)/components/shared/search/LocalSearchBar'
@@ -27,7 +28,9 @@ const page = async(props: Props) => {
        <Filter/>
        <div className='mt-3'>
        <FilterSmallScreen/>
-       {result?.questions.length>0 ? 
+       
+   
+       {result && result?.questions?.length>0 ? 
       result?.questions.map((question)=>
       (
         <QuestionCard
@@ -47,6 +50,7 @@ const page = async(props: Props) => {
 
       )) :<>
       <div>
+    
         NOthing to show
       </div>
       </>

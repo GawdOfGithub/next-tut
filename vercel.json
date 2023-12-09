@@ -1,4 +1,23 @@
 {
+    
+        "buildCommand": "next build",
+        "cleanUrls": true,
+        "framework": "nextjs",
+        "env": {
+
+            "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY":"pk_test_Y3J1Y2lhbC1kcnVtLTQ3LmNsZXJrLmFjY291bnRzLmRldiQ",
+"CLERK_SECRET_KEY":"sk_test_zRzo5Gc6pkeY1eKNgXryIjlHCldpOLxytG93H0Ayrb",
+"NEXT_PUBLIC_CLERK_SIGN_IN_URL":"/sign-in",
+"NEXT_PUBLIC_CLERK_SIGN_UP_URL":"/sign-up",
+"NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL":"/",
+"NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL":"/",
+"NEXT_PUBLIC_TINY_EDITOR_API_KEY":"qpyiuiasjacc9rpuw43tpnxwl2afsn0ht6vfxjqkg9ptnvll",
+"MONGODB_URL":"mongodb+srv://anuragbhandari:ywq92IiT7PZVKjdx@cluster10.fkm3jm2.mongodb.net/?retryWrites=true&w=majority"
+
+            
+        },
+    
+      
     "rewrites": [
         {"source": "/(.*)", "destination": "/"}
     ]
