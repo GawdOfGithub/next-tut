@@ -11,7 +11,7 @@ type Props = {}
 
 const Navbar = (props: Props) => {
   
-  console.log(localStorage.theme);
+ 
     
   return (
     <>
