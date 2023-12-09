@@ -57,5 +57,18 @@ export interface CreateUserParams
     username:string,
     name:string
 }
+export interface CreateAnswerParams {
+ content:string,
+ author:string,
+ question:string,
+ path:string
+}
+export interface QuestionVoteParams{
+    questionId:string,
+    userId:string,
+    hasUpvoted:boolean,
+    hasdownVoted:boolean,
+    path:string
 
+}
 //timestamp -4 min 39 sec  title - display question at homepage

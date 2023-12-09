@@ -3,7 +3,7 @@ import Question from "@/database/question.model";
 import { connectToDatabase } from "../mongoose"
 import Tag from "@/database/tag.model";
 import User from "@/database/user.modal";
-import { GetQuestionParams } from "./shared.types";
+import { GetQuestionParams, QuestionVoteParams } from "./shared.types";
 import { revalidatePath } from "next/cache";
 
 export async function createQuestion(params:any)
@@ -55,4 +55,64 @@ export async function getQuestions(params:GetQuestionParams) {
     }
 
     
+}
+export async function upvoteQuestion(params:QuestionVoteParams) {
+    try
+    {
+        connectToDatabase()
+        const {questionId,userId,hasUpvoted,hasdownVoted,path} = params;
+        let updateQuery = {}
+        if(hasUpvoted)
+        {
+            updateQuery = {$pull:{upvotes:userId}}
+        }
+        else if(hasdownVoted){
+            updateQuery = {
+                $pull:{downvotes:userId},
+                $push:{upvotes:userId}
+            }
+        }
+            else{
+                updateQuery = {$addToSet:{upvotes:userId}}
+            }
+        }
+
+
+    catch(error)
+    {
+        console.log(error);
+    }
+    
+}
+export async function downvoteQuestion(params:QuestionVoteParams)
+{
+    try
+    {
+        connectToDatabase()
+        const {questionId,userId,hasUpvoted,hasdownVoted,path} = params
+        let updateQuery = {}
+        if(hasdownVoted)
+        {
+            updateQuery = {$pull:{downvotes:userId}}
+
+        }
+        else if(hasUpvoted)
+        {
+            updateQuery =
+            {
+            $pull:{upvotes:userId},
+            $push:{downvotes:userId}
+            }
+        }
+        else{
+            updateQuery = {$addToSet:{downvotes:userId}}
+        }
+        revalidatePath(path)
+
+    }
+    catch(error)
+    {
+        console.log(error);
+        throw error
+    }
 }
