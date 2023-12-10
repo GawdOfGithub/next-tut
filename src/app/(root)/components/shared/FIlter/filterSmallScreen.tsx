@@ -6,11 +6,15 @@ import {
     SelectValue,
   } from "@/components/ui/select"
   import React from 'react'
-  import { FilterData } from "@/constants"
-  type Props = {}
-  const FilterSmallScreen = (props: Props) => {
+
+  
+
+  type Props = {
+    FilterData: Array<{ name: string }>;
+  };
+  const FilterSmallScreen = ({FilterData}: Props) => {
     return (
-        <div className="sm:hidden w-screen">
+        <div className="sm:hidden w-screen ">
         <Select>
         <SelectTrigger className="w-screen bg-gray-100 text-black">
           <SelectValue placeholder="Select a filter" />

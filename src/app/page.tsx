@@ -8,7 +8,7 @@ import Filter from './(root)/components/shared/FIlter/filter'
 import FilterSmallScreen from './(root)/components/shared/FIlter/filterSmallScreen'
 import QuestionCard from '@/components/ui/QuestionCard'
 import { getQuestions } from '@/lib/actions/question.action'
-
+import { HomeFilterData } from '@/constants'
 type Props = {}
 
 const page = async(props: Props) => {
@@ -25,9 +25,9 @@ const page = async(props: Props) => {
      
       </div>
      <LocalSearchBar route ="/"imgSrc="/icons8-search.svg"iconPosition="left" otherClasses='none' placeholder='Search....'/>
-       <Filter/>
+       <Filter FilterData={HomeFilterData}/>
        <div className='mt-3'>
-       <FilterSmallScreen/>
+       <FilterSmallScreen FilterData={HomeFilterData}/>
        
    
        {result && result?.questions?.length>0 ? 

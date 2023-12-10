@@ -44,13 +44,22 @@ export const TagData:TagDataType[] =
     {_id:5,totalQuestions:5,name:"svetle"},
   
 ]
-export const FilterData:FilerDataType[] =  
+export const HomeFilterData:FilerDataType[] =  
 [
   
     {name:"Newest"},
     {name:"Recommended"},
     {name:"Frequent"},
     {name:"Unanswered"},
+   
+]
+export const CommunityFilterData:FilerDataType[] =  
+[
+  
+    {name:"New Users"},
+    {name:"Old users"},
+    {name:"Top contributors"},
+   
    
 ]
 export const tempQuestionData:tempQuestionDataType[] =  

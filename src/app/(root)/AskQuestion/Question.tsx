@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-async-client-component */
 "use client"
 import React,{useRef} from 'react'
 import formSchema from '@/schema/schema'
