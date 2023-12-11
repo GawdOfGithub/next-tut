@@ -12,10 +12,10 @@ import { HomeFilterData } from '@/constants'
 type Props = {}
 
 const page = async(props: Props) => {
+  try{
+
   const result = await getQuestions({})
-  console.log(result?.questions);
-  console.log(result?.questions[0]?.author);
-  console.log(result?.questions[1]?.author);
+
 
   return (
     <div className='z-50 text-white mt-12  '>
@@ -59,6 +59,11 @@ const page = async(props: Props) => {
        </div>
     </div>
   )
+    }
+    catch(error)
+    {
+      console.log(error);
+    }
 }
 
 export default page

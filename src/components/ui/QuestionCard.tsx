@@ -1,5 +1,6 @@
 import React from 'react';
 import { Badge } from './badge';
+import Link from 'next/link';
 
 type TagType = {
   _id?: number;
@@ -24,8 +25,12 @@ type Props = {
 
 const QuestionCard = ({ _id, author, downvotes, title, tags, upvotes }: Props) => {
   return (
+   <>
+   <Link href={`/Question/${_id}`}>Go to </Link>
+   
     <div className="flex flex-col">
       <div className="font-extrabold text-3xl mb-5 text-black dark:text-white">{title}</div>
+      
       <div className="flex">
         {tags.map((item) => (
           <Badge key={item._id}>{item.name}</Badge>
@@ -40,6 +45,7 @@ const QuestionCard = ({ _id, author, downvotes, title, tags, upvotes }: Props) =
         </div>
       </div>
     </div>
+    </>
   );
 };
 
