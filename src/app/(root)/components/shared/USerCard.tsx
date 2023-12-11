@@ -17,7 +17,35 @@ import { Avatar ,
   AvatarImage,
 } from '@/components/ui/avatar'
 
-export default function UserCard()
+type Props = 
+{
+  _id:string,
+  name:string,
+  username:string,
+  email:string,
+  bio:string
+  picture:string,
+  location:{
+    city:string,
+    country:string
+  },
+  portfolioWebsite:string,
+  reputation:number
+
+}
+type Props2 = 
+{
+  _id:string,
+  name:string,
+  username:string,
+  email:string,
+  picture:string,
+ 
+
+}
+
+// export default function UserCard({_id,name,username,email,bio,picture,location,portfolioWebsite,reputation}:Props)
+export default function UserCard({_id,name,username,email,picture,}:Props2)
 {
     return(
 
@@ -26,8 +54,8 @@ export default function UserCard()
       <CardHeader>
         <CardTitle>
         <Avatar >
-      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" height="500" width="500" />
-      <AvatarFallback>CN</AvatarFallback>
+      <AvatarImage src={picture} alt="@shadcn" height="500" width="500" />
+      <AvatarFallback >CN</AvatarFallback>
     </Avatar>
     
 
@@ -38,8 +66,8 @@ export default function UserCard()
       <CardContent>
         <div className='flex flex-col'>
           
-      <div className='font-extrabold '> Anurag Bhandari </div> 
-      <div className=''> @anruag </div> 
+      <div className='font-extrabold '> {name} </div> 
+      <div className=''> {email} </div> 
         </div>
       </CardContent>
       <CardFooter className="flex justify-center ">

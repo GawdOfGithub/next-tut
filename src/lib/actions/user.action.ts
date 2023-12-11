@@ -12,13 +12,25 @@ export default async function getUserById(params:any)
         const{userId} = params
         const user = await User.findOne({clerkId:userId})
         return user
-        console.log(user);
+        //console.log(user);
     }
     catch(error)
     {
         console.log(error);
     }
 }
+export async function getAllUsers() {
+    try {
+        connectToDatabase();
+        const users = await User.find({});
+        console.log(users);
+        return users;
+    } catch (error) {
+        console.log(error);
+        throw error; // You might want to rethrow the error to handle it elsewhere
+    }
+}
+
 export async function createUser(userData:CreateUserParams)
 {
     try{
