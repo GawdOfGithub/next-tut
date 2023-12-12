@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter,Space_Grotesk } from 'next/font/google'
 import './globals.css'
+import './prism.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import ThemeContextProvider from '@/contexts/ThemeContext'
 import Navbar from '@/app/(root)/components/shared/Navbar'

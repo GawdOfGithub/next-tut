@@ -26,11 +26,12 @@ type Props = {
 const QuestionCard = ({ _id, author, downvotes, title, tags, upvotes }: Props) => {
   return (
    <>
-   <Link href={`/Question/${_id}`}>Go to </Link>
+   
    
     <div className="flex flex-col">
+    <Link href={`Question/${_id}`}>
       <div className="font-extrabold text-3xl mb-5 text-black dark:text-white">{title}</div>
-      
+      </Link>
       <div className="flex">
         {tags.map((item) => (
           <Badge key={item._id}>{item.name}</Badge>
@@ -38,7 +39,9 @@ const QuestionCard = ({ _id, author, downvotes, title, tags, upvotes }: Props) =
       </div>
       <div className="flex gap-10">
         <div key={author._id} className="flex gap-52 mt-10">
+          
           <h2 className="text-black dark:text-white">{author.name}</h2>
+          
           <h5 className="text-black dark:text-white">added 1 week ago</h5>
           <h5 className="text-black dark:text-white">{upvotes} votes</h5>
           <h5 className="text-black dark:text-white">{downvotes} downvotes</h5>

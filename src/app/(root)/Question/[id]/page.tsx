@@ -4,8 +4,8 @@ import { Avatar ,
     AvatarFallback,
     AvatarImage,
   } from '@/components/ui/avatar'
-
-
+  import { Badge } from '@/components/ui/badge'
+import ParseHTML from '../../components/shared/ParseHTML'
 
 type Props = {
     params:{
@@ -33,10 +33,26 @@ const Page = async ({params}:Props) => {
       <AvatarFallback >CN</AvatarFallback>
     </Avatar>
     <div>{question.author.name}</div>
+    
+         <div className='ml-3'>
+  {question.tags.map((item:any,index:number) =>
+        
+        
+        (
+           
+            <Badge key={index} >{item.name}</Badge>
+            
+        ))}
+        </div>
+    
     </div>
-    <div>
+    <div className='text-4xl font-bold mt-4 mb-4 '>
         {question.title}
     </div>
+    <main>
+    <ParseHTML data={question.content}/>
+     
+    </main>
     </div>
     </>
   );
