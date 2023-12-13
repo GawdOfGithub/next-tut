@@ -1,5 +1,5 @@
 "use server"
-import User from "@/database/user.modal"
+import User from "../user.modal"
 
 import { connectToDatabase } from "../mongoose"
 import { CreateUserParams, DeleteUserParams, UpdateUserParams } from "./shared.types"
@@ -12,7 +12,7 @@ export default async function getUserById(params:any)
         const{userId} = params
         const user = await User.findOne({clerkId:userId})
         return user
-        //console.log(user);
+        
     }
     catch(error)
     {

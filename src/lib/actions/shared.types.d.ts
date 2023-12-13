@@ -59,3 +59,10 @@ export interface CreateUserParams
 }
 
 //timestamp -4 min 39 sec  title - display question at homepage
+
+export interface CreateAnswerParams{
+    content:string,
+    author:Schema.Types.ObjectId | IUser
+    question:string,
+    path:string
+}

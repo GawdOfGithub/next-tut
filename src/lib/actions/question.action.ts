@@ -2,7 +2,7 @@
 import Question from "@/database/question.model";
 import { connectToDatabase } from "../mongoose"
 import Tag from "@/database/tag.model";
-import User from "@/database/user.modal";
+import User from "../user.modal";
 import { GetQuestionParams } from "./shared.types";
 import { revalidatePath } from "next/cache";
 

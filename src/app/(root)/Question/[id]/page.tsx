@@ -1,11 +1,14 @@
 import React from 'react'
 import { getQuestionById } from '@/lib/actions/question.action'
+import {auth} from '@clerk/nextjs'
+import getUserById from '@/lib/actions/user.action'
 import { Avatar ,
     AvatarFallback,
     AvatarImage,
   } from '@/components/ui/avatar'
   import { Badge } from '@/components/ui/badge'
 import ParseHTML from '../../components/shared/ParseHTML'
+import Answer from '@/app/(root)/components/shared/Answer'
 
 type Props = {
     params:{
@@ -14,19 +17,20 @@ type Props = {
 }
 
 const Page = async ({params}:Props) => {
+
     try
     {
+      const {userId} = auth()
     const {id} = params
+   const user = await getUserById(userId)
     const question = await getQuestionById({id})
-    console.log(`It is coming from here${id}`);
-    console.log(question);
-    console.log(question.author.picture);
+  
     
    
 
   return (
     <>
-    <div className='flex flex-col'>
+    <div className='flex flex-col items-center justify-center'>
     <div className='flex '>
        <Avatar >
       <AvatarImage src={question.author.picture} alt="@shadcn"  />
@@ -53,7 +57,14 @@ const Page = async ({params}:Props) => {
     <ParseHTML data={question.content}/>
      
     </main>
+    
     </div>
+    <div className='min-w-[]'> console.log(`It is coming from here${id}`);
+    console.log(question);
+    console.log(question.author.picture);
+      <Answer questionId={id} userId={user}/>
+    </div>
+   
     </>
   );
     }

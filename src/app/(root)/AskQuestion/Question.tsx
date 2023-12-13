@@ -1,6 +1,6 @@
 "use client"
 import React,{useRef} from 'react'
-import formSchema from '@/schema/schema'
+import {formSchema} from '@/schema/schema'
 import {z} from 'zod'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -130,7 +130,7 @@ if(tagValue!=='')
       onEditorChange={(content)=>field.onChange(content)}
       init={{
         height: 500,
-        width:500,
+        width:800,
         menubar: false,
         plugins: [
           'advlist autolink lists link image charmap print preview anchor','codesample',
